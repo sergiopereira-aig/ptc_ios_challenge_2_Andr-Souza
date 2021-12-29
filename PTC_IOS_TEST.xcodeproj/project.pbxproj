@@ -12,6 +12,8 @@
 		2DCF2B3C277C708800C7ED45 /* SellerCustomViewModdelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2DCF2B3B277C708800C7ED45 /* SellerCustomViewModdelTests.swift */; };
 		2DCF2B43277C71F000C7ED45 /* feedViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2DCF2B42277C71F000C7ED45 /* feedViewController.swift */; };
 		2DCF2B47277C78B800C7ED45 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2DCF2B46277C78B800C7ED45 /* SceneDelegate.swift */; };
+		2DCF2B49277C7B3200C7ED45 /* TabBarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2DCF2B48277C7B3200C7ED45 /* TabBarViewController.swift */; };
+		2DCF2B4B277C7BCF00C7ED45 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2DCF2B4A277C7BCF00C7ED45 /* ViewController.swift */; };
 		6830A59A22C51C9D00C62108 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6830A59922C51C9D00C62108 /* AppDelegate.swift */; };
 		6830A5A122C51C9E00C62108 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 6830A5A022C51C9E00C62108 /* Assets.xcassets */; };
 		6830A5A422C51C9E00C62108 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6830A5A222C51C9E00C62108 /* LaunchScreen.storyboard */; };
@@ -34,6 +36,8 @@
 		2DCF2B3B277C708800C7ED45 /* SellerCustomViewModdelTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SellerCustomViewModdelTests.swift; sourceTree = "<group>"; };
 		2DCF2B42277C71F000C7ED45 /* feedViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = feedViewController.swift; sourceTree = "<group>"; };
 		2DCF2B46277C78B800C7ED45 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
+		2DCF2B48277C7B3200C7ED45 /* TabBarViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarViewController.swift; sourceTree = "<group>"; };
+		2DCF2B4A277C7BCF00C7ED45 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		6830A59622C51C9D00C62108 /* PTC_IOS_TEST.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = PTC_IOS_TEST.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		6830A59922C51C9D00C62108 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		6830A5A022C51C9E00C62108 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -96,6 +100,8 @@
 				2DCF2B30277C6AC600C7ED45 /* SellerModel.swift */,
 				2DCF2B32277C6F3200C7ED45 /* SellerCustomCellViewModel.swift */,
 				2DCF2B42277C71F000C7ED45 /* feedViewController.swift */,
+				2DCF2B4A277C7BCF00C7ED45 /* ViewController.swift */,
+				2DCF2B48277C7B3200C7ED45 /* TabBarViewController.swift */,
 			);
 			path = PTC_IOS_TEST;
 			sourceTree = "<group>";
@@ -212,6 +218,8 @@
 				2DCF2B33277C6F3200C7ED45 /* SellerCustomCellViewModel.swift in Sources */,
 				2DCF2B31277C6AC600C7ED45 /* SellerModel.swift in Sources */,
 				6830A59A22C51C9D00C62108 /* AppDelegate.swift in Sources */,
+				2DCF2B4B277C7BCF00C7ED45 /* ViewController.swift in Sources */,
+				2DCF2B49277C7B3200C7ED45 /* TabBarViewController.swift in Sources */,
 				2DCF2B47277C78B800C7ED45 /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

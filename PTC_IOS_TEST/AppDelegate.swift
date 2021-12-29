@@ -14,13 +14,14 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     var window: UIWindow?
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
-        // Override point for customization after application launch.
-        self.window = UIWindow(frame: UIScreen.main.bounds)
-//                   let mainViewController = ViewController()
-//                   let mainNavigationController = UINavigationController(rootViewController: mainViewController)
-//                   self.window!.rootViewController = mainNavigationController
-//                   self.window!.makeKeyAndVisible()
-        return true
+        if #available(iOS 13.0, *) { } else {
+                 self.window = UIWindow(frame: UIScreen.main.bounds)
+                 let mainViewController = ViewController()
+                 let mainNavigationController = UINavigationController(rootViewController: mainViewController)
+                 self.window!.rootViewController = mainNavigationController
+                 self.window!.makeKeyAndVisible()
+             }
+             return true
     }
 
     func applicationWillResignActive(_ application: UIApplication) {
