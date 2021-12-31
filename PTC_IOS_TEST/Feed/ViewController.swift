@@ -28,6 +28,7 @@ class ViewController: UIViewController {
         button.isEnabled = false
         return button
     }()
+    
     func presentFeedView(){
         viewContent.backgroundColor = .purple
         let viewController = FeedTableViewController()

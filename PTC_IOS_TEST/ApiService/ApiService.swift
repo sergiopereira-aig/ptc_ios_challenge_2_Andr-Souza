@@ -9,7 +9,7 @@
 import UIKit
 
 protocol ApiServiceProtocol {
-    func apiToGetData(completion : @escaping (SellerModel) -> ())
+    func apiToGetData(completion : @escaping ([SellerModel]) -> ())
 }
 
 class ApiService {
@@ -17,13 +17,13 @@ class ApiService {
 }
 
 extension ApiService: ApiServiceProtocol {
-    func apiToGetData(completion : @escaping (SellerModel) -> ()) {
-        completion( SellerModel(typeOfItem: "typeOfItem",
+    func apiToGetData(completion : @escaping ([SellerModel]) -> ()) {
+        completion( [SellerModel(typeOfItem: "typeOfItem",
                            status: .recommended,
                            isFollow: true,
                            sellerName: "title",
                            productImageName: "productImageName",
-                           date: Date())
+                           date: Date())]
                     )
     }
 }

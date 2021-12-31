@@ -12,17 +12,17 @@ class ProductTableViewCell: UITableViewCell {
     var viewIsVisibleConstraint: NSLayoutYAxisAnchor!
     var viewIsHiddenConstraint: NSLayoutYAxisAnchor!
 
-    func showView() {
-        extraContent.isHidden = false
-        viewIsVisibleConstraint.isActive = true
-        viewIsHiddenConstraint.isActive = false
-    }
-
-    func hideView() {
-        extraContent.isHidden = true
-        viewIsVisibleConstraint.isActive = false
-        viewIsHiddenConstraint.isActive = true
-    }
+//    func showView() {
+//        extraContent.isHidden = false
+//        viewIsVisibleConstraint.isActive = true
+//        viewIsHiddenConstraint.isActive = false
+//    }
+//
+//    func hideView() {
+//        extraContent.isHidden = true
+//        viewIsVisibleConstraint.isActive = false
+//        viewIsHiddenConstraint.isActive = true
+//    }
     var product: SellerModel? {
         didSet {
             status.text = product?.status.rawValue
