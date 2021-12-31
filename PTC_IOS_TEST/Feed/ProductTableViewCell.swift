@@ -9,8 +9,8 @@
 import UIKit
 
 class ProductTableViewCell: UITableViewCell {
-    var viewIsVisibleConstraint: NSLayoutConstraint!
-    var viewIsHiddenConstraint: NSLayoutConstraint!
+    var viewIsVisibleConstraint: NSLayoutYAxisAnchor!
+    var viewIsHiddenConstraint: NSLayoutYAxisAnchor!
 
     func showView() {
         extraContent.isHidden = false
@@ -182,14 +182,15 @@ class ProductTableViewCell: UITableViewCell {
 
         seeAllImage.anchor(top: separator.bottomAnchor, left: nil, bottom: nil, right: backView.rightAnchor, paddingTop: 12, paddingLeft: 5, paddingBottom: 12, paddingRight: 15, width: imageSize, height: imageSize, enableInsets: false)
 
-//        let separator2 = UIView(frame: .zero)
-//        separator2.backgroundColor = backgroundColor
-//        addSubview(separator2)
-//
-//        separator2.anchor(top: productImage1.bottomAnchor, left: backView.leftAnchor, bottom: nil, right: backView.rightAnchor, paddingTop: 18, paddingLeft: 0, paddingBottom: 0, paddingRight: 0, width: 0, height: 2, enableInsets: false)
-//
-//        addSubview(extraContent)
-//        extraContent.anchor(top: separator2.bottomAnchor, left: backView.leftAnchor, bottom: nil, right: backView.rightAnchor, paddingTop: 12, paddingLeft: 5, paddingBottom: 0, paddingRight: 5, width: 0, height: 0, enableInsets: false)
+        let separator2 = UIView(frame: .zero)
+        separator2.backgroundColor = backgroundColor
+        addSubview(separator2)
+
+        separator2.anchor(top: productImage1.bottomAnchor, left: backView.leftAnchor, bottom: nil, right: backView.rightAnchor, paddingTop: 18, paddingLeft: 0, paddingBottom: 0, paddingRight: 0, width: 0, height: 2, enableInsets: false)
+
+        addSubview(extraContent)
+        viewIsVisibleConstraint = separator2.bottomAnchor
+        extraContent.anchor(top: viewIsVisibleConstraint, left: backView.leftAnchor, bottom: nil, right: backView.rightAnchor, paddingTop: 12, paddingLeft: 5, paddingBottom: 0, paddingRight: 5, width: 0, height: 0, enableInsets: false)
 
         addSubview(dateLabel)
         dateLabel.anchor(top: productImage1.bottomAnchor, left: backView.leftAnchor, bottom: backView.bottomAnchor, right: nil, paddingTop: 19, paddingLeft: 12, paddingBottom: 12, paddingRight: 0, width: 0, height: 0, enableInsets: false)
