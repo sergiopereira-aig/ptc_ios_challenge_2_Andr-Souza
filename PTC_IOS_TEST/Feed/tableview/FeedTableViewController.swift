@@ -25,7 +25,6 @@ class FeedTableViewController: UITableViewController {
     }
     
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-//        navigationController?.pushViewController(ProductViewController(), animated: true)
         let loadingVC = LoadingViewController()
         loadingVC.modalTransitionStyle = .crossDissolve
         present(loadingVC, animated: true, completion: nil)

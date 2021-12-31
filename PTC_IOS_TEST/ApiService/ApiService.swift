@@ -18,13 +18,13 @@ class ApiService {
 
 extension ApiService: ApiServiceProtocol {
     func apiToGetData(completion : @escaping ([SellerModel]) -> ()) {
-        completion( [SellerModel(typeOfItem: "typeOfItem",
-                           status: .recommended,
-                           isFollow: true,
-                           sellerName: "title",
-                           productImageName: "productImageName",
-                           date: Date())]
-                    )
+            var products = [SellerModel]()
+            products.append(SellerModel(typeOfItem: "typeOfItem", status: .recommended, isFollow: false, sellerName: "Seller with a very long name that needs two lines to fit ", productImageName: "productImageName", date: Date()))
+            products.append(SellerModel(typeOfItem: "typeOfItem", status: .new, isFollow: true, sellerName: "Seller short name", productImageName: "productImageName", date: Date()))
+            products.append(SellerModel(typeOfItem: "typeOfItem", status: .recommended, isFollow: false, sellerName: "Jerseygramm and Brandings Store", productImageName: "productImageName", date: Date()))
+            products.append(SellerModel(typeOfItem: "typeOfItem", status: .recommended, isFollow: false, sellerName: "title", productImageName: "productImageName", date: Date()))
+            products.append(SellerModel(typeOfItem: "typeOfItem", status: .recommended, isFollow: false, sellerName: "title", productImageName: "productImageName", date: Date()))
+        completion(products)
     }
 }
 

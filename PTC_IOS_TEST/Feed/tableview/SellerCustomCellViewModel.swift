@@ -9,23 +9,26 @@
 import UIKit
 
 class SellerCustomCellViewModel: NSObject {
-//    private var apiService: ApiService!
-//    private(set) var empData: [SellerModel?] {
-//        didSet {
-////            self.bindSellerViewModelToController()
-//        }
-//    }
-////    var bindEmployeeViewModelToController : (() -> ()) = {}
-//
-//    override init() {
-//        super.init()
-//        self.apiService = ApiService()
-//        callFuncToGetEmpData()
-//    }
-//
-//    func callFuncToGetEmpData() {
-//        self.apiService.apiToGetData { (empData) in
+    private var apiService: ApiService!
+    private(set) var empData: SellerModel! {
+        didSet {
+            self.bindEmployeeViewModelToController()
+        }
+    }
+    var bindEmployeeViewModelToController : (() -> ()) = {}
+
+    override init() {
+        super.init()
+        self.apiService = ApiService()
+        callFuncToGetEmpData()
+    }
+
+    func callFuncToGetEmpData() {
+        self.apiService.apiToGetData { (empData) in
 //            self.empData = empData
-//        }
-//    }
+//            bindEmployeeViewModelToController.sel
+        }
+    }
+
+   
 }

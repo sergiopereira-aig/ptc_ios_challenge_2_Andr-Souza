@@ -12,17 +12,6 @@ class ProductTableViewCell: UITableViewCell {
     var viewIsVisibleConstraint: NSLayoutYAxisAnchor!
     var viewIsHiddenConstraint: NSLayoutYAxisAnchor!
 
-//    func showView() {
-//        extraContent.isHidden = false
-//        viewIsVisibleConstraint.isActive = true
-//        viewIsHiddenConstraint.isActive = false
-//    }
-//
-//    func hideView() {
-//        extraContent.isHidden = true
-//        viewIsVisibleConstraint.isActive = false
-//        viewIsHiddenConstraint.isActive = true
-//    }
     var product: SellerModel? {
         didSet {
             status.text = product?.status.rawValue
@@ -41,7 +30,6 @@ class ProductTableViewCell: UITableViewCell {
     private let status: UILabel = {
         let label = UILabel()
         label.font = UIFont.boldSystemFont(ofSize: 12)
-        label.backgroundColor = .red
         label.textColor = .white
         label.textAlignment = .center
         label.layer.cornerRadius = 3
@@ -84,7 +72,6 @@ class ProductTableViewCell: UITableViewCell {
     private let productImage1 : UIImageView = {
         let imgView = UIImageView(image: #imageLiteral(resourceName: "Camera"))
         imgView.contentMode = .scaleAspectFit
-        imgView.backgroundColor = .blue
         imgView.clipsToBounds = true
         return imgView
     }()
@@ -92,7 +79,6 @@ class ProductTableViewCell: UITableViewCell {
     private let productImage2 : UIImageView = {
         let imgView = UIImageView(image: #imageLiteral(resourceName: "Camera"))
         imgView.contentMode = .scaleAspectFit
-        imgView.backgroundColor = .green
         imgView.clipsToBounds = true
         return imgView
     }()
@@ -100,15 +86,22 @@ class ProductTableViewCell: UITableViewCell {
     private let seeAllImage : UIImageView = {
         let imgView = UIImageView(image: #imageLiteral(resourceName: "Camera"))
         imgView.contentMode = .scaleAspectFit
-        imgView.backgroundColor = .red
         imgView.clipsToBounds = true
+//        let label = UILabel()
+//        label.text = "SEE ALL"
+//        label.backgroundColor = .brown
+//        label.textColor = .white
+//        imgView.addSubview(label)
+//
+//        label.centerXAnchor.constraint(equalTo: imgView.centerXAnchor).isActive = true
+//        label.centerYAnchor.constraint(equalTo: imgView.centerYAnchor).isActive = true
+
         return imgView
     }()
 
     private let dateLabel: UILabel = {
         let label = UILabel()
         label.font = UIFont.boldSystemFont(ofSize: 12)
-        label.textAlignment = .left
         label.text = "02-07-1993"
         label.textColor = .black
         return label
@@ -163,7 +156,7 @@ class ProductTableViewCell: UITableViewCell {
         addSubview(productImage2)
         addSubview(seeAllImage)
         self.layoutSubviews()
-        let imageSize = (frame.width - 40)/3
+        let imageSize = (backView.frame.width)/3
 
 
         productImage1.anchor(top: separator.bottomAnchor,
@@ -178,24 +171,43 @@ class ProductTableViewCell: UITableViewCell {
                              height: imageSize,
                              enableInsets: false)
 
-        productImage2.anchor(top: separator.bottomAnchor, left: productImage1.rightAnchor, bottom: nil, right: nil, paddingTop: 12, paddingLeft: 5, paddingBottom: 12, paddingRight: 0, width: imageSize, height: imageSize, enableInsets: false)
+        productImage2.anchor(top: separator.bottomAnchor,
+                             left: productImage1.rightAnchor,
+                             bottom: nil,
+                             right: nil,
+                             paddingTop: 12,
+                             paddingLeft: 5,
+                             paddingBottom: 12,
+                             paddingRight: 0,
+                             width: imageSize,
+                             height: imageSize,
+                             enableInsets: false)
 
-        seeAllImage.anchor(top: separator.bottomAnchor, left: nil, bottom: nil, right: backView.rightAnchor, paddingTop: 12, paddingLeft: 5, paddingBottom: 12, paddingRight: 15, width: imageSize, height: imageSize, enableInsets: false)
-
-        let separator2 = UIView(frame: .zero)
-        separator2.backgroundColor = backgroundColor
-        addSubview(separator2)
-
-        separator2.anchor(top: productImage1.bottomAnchor, left: backView.leftAnchor, bottom: nil, right: backView.rightAnchor, paddingTop: 18, paddingLeft: 0, paddingBottom: 0, paddingRight: 0, width: 0, height: 2, enableInsets: false)
-
-        addSubview(extraContent)
-        viewIsVisibleConstraint = separator2.bottomAnchor
-        extraContent.anchor(top: viewIsVisibleConstraint, left: backView.leftAnchor, bottom: nil, right: backView.rightAnchor, paddingTop: 12, paddingLeft: 5, paddingBottom: 0, paddingRight: 5, width: 0, height: 0, enableInsets: false)
-
+        seeAllImage.anchor(top: separator.bottomAnchor,
+                           left: nil,
+                           bottom: nil,
+                           right: backView.rightAnchor,
+                           paddingTop: 12,
+                           paddingLeft: 5,
+                           paddingBottom: 12,
+                           paddingRight: 15,
+                           width: imageSize,
+                           height: imageSize,
+                           enableInsets: false)
+//
+//        if false {
+//            let separator2 = UIView(frame: .zero)
+//            separator2.backgroundColor = backgroundColor
+//            addSubview(separator2)
+//
+//            separator2.anchor(top: productImage1.bottomAnchor, left: backView.leftAnchor, bottom: nil, right: backView.rightAnchor, paddingTop: 18, paddingLeft: 0, paddingBottom: 0, paddingRight: 0, width: 0, height: 2, enableInsets: false)
+//
+//            addSubview(extraContent)
+//            viewIsVisibleConstraint = separator2.bottomAnchor
+//            extraContent.anchor(top: viewIsVisibleConstraint, left: backView.leftAnchor, bottom: nil, right: backView.rightAnchor, paddingTop: 12, paddingLeft: 5, paddingBottom: 0, paddingRight: 5, width: 0, height: 0, enableInsets: false)
+//        }
         addSubview(dateLabel)
         dateLabel.anchor(top: productImage1.bottomAnchor, left: backView.leftAnchor, bottom: backView.bottomAnchor, right: nil, paddingTop: 19, paddingLeft: 12, paddingBottom: 12, paddingRight: 0, width: 0, height: 0, enableInsets: false)
-
-//        dateLabel.anchor(top: extraContent.bottomAnchor, left: backView.leftAnchor, bottom: backView.bottomAnchor, right: nil, paddingTop: 19, paddingLeft: 12, paddingBottom: 12, paddingRight: 0, width: 0, height: 0, enableInsets: false)
 
         addSubview(shareButton)
         shareButton.anchor(top: nil, left: nil, bottom: nil, right: backView.rightAnchor, paddingTop: 19, paddingLeft: 16, paddingBottom: 12, paddingRight: 5, width: 0, height: 0, enableInsets: false)

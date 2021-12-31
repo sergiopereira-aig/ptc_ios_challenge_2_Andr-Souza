@@ -21,8 +21,8 @@ class FeedTableViewModel: NSObject {
 
 extension FeedTableViewModel {
     func callFuncGetEmptyData() {
-//        self.apiService.apiToGetData { (empData) in
-//            print(empData)
-//        }
+        self.apiService.apiToGetData { (empData) in
+            print(empData)
+        }
     }
 }

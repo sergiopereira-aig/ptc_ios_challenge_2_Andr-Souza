@@ -30,7 +30,6 @@ class ViewController: UIViewController {
     }()
     
     func presentFeedView(){
-        viewContent.backgroundColor = .purple
         let viewController = FeedTableViewController()
         viewController.willMove(toParent: self)
         viewController.view.frame = viewContent.bounds
@@ -64,7 +63,6 @@ class ViewController: UIViewController {
 
     private let viewContent: UIView = {
         let view = UIView()
-        view.backgroundColor = .brown
         return view
     }()
 
