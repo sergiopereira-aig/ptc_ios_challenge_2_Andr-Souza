@@ -8,11 +8,6 @@
 
 import UIKit
 
-enum status: String {
-    case recommended = "RECOMMENDED SELLER"
-    case new = "NEW ARRIVALS"
-}
-
 class SellerCustomCellViewModel: NSObject {
 
 }
